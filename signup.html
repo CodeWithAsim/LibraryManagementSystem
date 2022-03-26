@@ -1,0 +1,209 @@
+<html>
+<head>
+    <title>SignUp</title>
+	<head>
+	<style>
+	
+		form{border:2px solid black;
+			 position:absolute;
+			 left:38.5%
+			}
+			
+		body{background-color:gray}
+		
+		div.first{border:0;
+				 right:5%;
+				 top:0.9%;
+				 padding:0 0 0 0;
+				 position:fixed	
+				}
+				
+		div.second{border:0;
+				 right:2.6%;
+				 top:3.4%;
+				 padding:0 0 0 0;
+				 position:fixed	
+				}
+		
+		a { color: black;  
+			text-decoration: none;  
+			} 
+	</style> 
+	
+<script language="JavaScript" type="text/javaScript">
+
+function validate()
+{	
+
+	if ( document.signup.fname.value == "" )
+	    {
+			alert("First name is empty!");
+			document.signup.fname.focus();			
+			return false;
+	    }
+		
+	if ( document.signup.lname.value == "" )
+	    {
+			alert("Last name is empty!");
+			document.signup.lname.focus();			
+			return false;
+	    }
+		
+	if (!document.signup.gender[0].checked && !document.signup.gender[1].checked)
+	{
+		alert("Please choose gender");
+		return false;
+	}	
+				
+	if ( document.signup.id.value == "" )		
+        {
+		alert("Please enter your unique ID!")
+		document.signup.id.focus();
+		return false;
+		}	
+		
+	if (!document.signup.role[0].checked && !document.signup.role[1].checked)
+	{
+		alert("Please choose your role! ");
+		return false;
+	}
+
+
+	if(document.signup.password.value == "")	
+	   {
+			alert("password is empty!!");
+			document.signup.password.focus();
+			return false;
+	   }	
+
+	if(document.signup.password.value!=document.signup.confirm_password.value)
+	{
+			alert("New Password and Confirm new Password doesnt match");
+			document.signup.confirm_password.focus();
+			return false;
+	}	
+	
+	if (!document.signup.agree.checked)
+	{
+		alert("Please agree our terms!");
+		return false;
+	}	
+
+	return true;
+
+}
+</script>
+    
+</head>
+
+<body>
+
+<br>
+
+<div class="first" ><h2><a href="controller?action=login"> LOGIN&nbsp <div class="second" ><img src="logo3.jpg" width="27"></div></a></h2></div>
+
+<p align="center"><font color=black size=6><b>SIGN UP</b></font></p>
+
+<form name=signup action="controller" method=post onsubmit="return validate()">
+
+    <table>
+    <tr><td align="right">First Name:</td>
+    <td><input type=text name="fname" ></td>
+    </tr>
+
+<br>
+	
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+	
+    <tr><td align="right">Last Name:</td>
+    <td><input type=text name="lname" ></td>
+    </tr>
+	
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+	
+	    <tr> 
+	     <td  align="right">Gender:</td> 
+	     <td ><input type="radio" name="gender" value="male"> Male </td> 
+	   </tr>
+
+	   <tr> 
+	     <td  align="right"></td> 
+	     <td ><input type="radio" name="gender" value="female"> Female </td> 
+	   </tr>
+	
+    <tr>
+    <td align="right">ID:</td>
+    <td><input type=text name=id></td>
+    </tr>
+	
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+	
+	    <tr> 
+	     <td  align="right">Role:</td> 
+	     <td ><input type="radio" name="role" value="admin"> Admin </td> 
+	   </tr>
+
+	   <tr> 
+	     <td  align="right"></td> 
+	     <td ><input type="radio" name="role" value="member"> Member </td> 
+	   </tr>
+			
+    <tr>
+    <td align="right">Password:</td>
+    <td><input type=password name="password"></td>
+    </tr>
+	
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right">Confirm password:</td>
+    <td><input type=password name="confirm_password"></td>
+    </tr>
+	
+	<tr>
+	<td align="right"><input type="checkbox" name="agree" ></td> <td> I agree to your terms.</td>
+	<tr>
+	
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+	
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+			
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+	
+    <tr>
+    <td></td>
+    <td><input type=submit value='Signup' name="action"></td>
+    </tr>
+	
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+	
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+	
+    <tr><td align="right"></td>
+    <td></td>
+    </tr>
+
+    </table>
+
+</form>
+</body>
+
+</html>
